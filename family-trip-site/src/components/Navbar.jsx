@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect }from 'react';
+import axios from "axios";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,6 +10,20 @@ import {
 
 
 const Navbar = () => {
+
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=18.10&longitude=77.29&hourly=temperature_2m"
+
+  useEffect(() => {
+
+    axios.get(url)
+    .then((res) => {
+      console.log(res)
+    })
+  }, [])
+  
+  
+ 
+
   return (
     <div>
  <Breadcrumb>
